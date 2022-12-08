@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3 mt-4">
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="courseTitle" [(ngModel)]="courseTitle">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="fomr-label">Description</label>
+                    <input type="text" class="form-control" name="courseDescription" [(ngModel)]="courseDescription">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Date</label>
+                    <input type="date" class="form-control" name="courseDate" [(ngModel)]="courseDate">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Duration</label>
+                    <input type="text" class="form-control" name="courseDuration" [(ngModel)]="courseDuration">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Venue</label>
+                    <input type="text" class="form-control" name="courseVenue" [(ngModel)]="courseVenue">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <button class="btn btn-primary" (click)="readValues()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
