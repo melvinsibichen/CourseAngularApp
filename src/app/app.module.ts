@@ -8,7 +8,8 @@ import { ViewCourseComponent } from './view-course/view-course.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component'
 
 const myRoute:Routes = [
   {
@@ -18,6 +19,10 @@ const myRoute:Routes = [
   {
     path:"add",
     component:AddCourseComponent
+  },
+  {
+    path:"search",
+    component:SearchComponent
   }
 ]
 
@@ -26,7 +31,8 @@ const myRoute:Routes = [
     AppComponent,
     AddCourseComponent,
     ViewCourseComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

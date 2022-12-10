@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
+  
 
   constructor(private http:HttpClient) {}
 
@@ -14,5 +15,8 @@ export class ApiService {
 
   addCourse = (dataToSend:any) =>{
     return this.http.post('http://localhost:8080/add',dataToSend)
+  }
+  searchCourse = (data:any)=>{
+    return this.http.post('http://localhost:8080/search',data);
   }
 }
