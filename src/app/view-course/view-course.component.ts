@@ -15,4 +15,4 @@ export class ViewCourseComponent {
     )
   }
   courses:any = []
-}
+} 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -7,30 +8,33 @@ import { ApiService } from '../api.service';
   styleUrls: ['./add-course.component.css']
 })
 export class AddCourseComponent {
-  constructor(private api: ApiService) { }
-  courseTitle = ""
-  courseDescription = ""
-  courseDuration = ""
-  courseDate = ""
-  courseVenue = ""
+  constructor(private api: ApiService,private route:Router) { }
+  title = ""
+  description = ""
+  duration = ""
+  date = ""
+  venue = ""
 
   readValues = () => {
-    let courseData = { "courseTitle": this.courseTitle, "courseDescription": this.courseDescription, "courseDuration": this.courseDuration, "courseDate": this.courseDate, "courseVenue": this.courseVenue }
+    let courseData = { "title": this.title, "description": this.description, "duration": this.duration, "date": this.date, "venue": this.venue }
     this.api.addCourse(courseData).subscribe(
       (response: any) => {
         console.log(response)
         if (response.status == "success") {
           alert('Course added successfully')
-          this.courseTitle = ""
-          this.courseDescription = ""
-          this.courseDuration = ""
-          this.courseDate = ""
-          this.courseVenue = ""
+          
         } else {
           alert('Error in adding course')
         }
       }
     )
+    this.route.navigate(["/"])
+    this.title = ""
+    this.description = ""
+    this.duration = ""
+    this.date = ""
+    this.venue = ""
     console.log(courseData)
   }
+
 }
